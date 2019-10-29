@@ -44,6 +44,17 @@ navItems.forEach(ele => {
     })
 })
 
+navItems.forEach(ele => {
+    ele.addEventListener('click', event => {
+        event.preventDefault();
+    })
+})
+
+let navBar = document.querySelector('nav');
+navBar.addEventListener('mousedown', event => {
+    document.querySelector('.main-navigation').style.borderBottom = '1px solid orange';
+})
+
 //change window size
 window.addEventListener('resize', event => {
     document.body.style.fontFamily = '"Indie Flower", cursive';
@@ -67,5 +78,21 @@ let imgs = document.querySelectorAll('img');
 imgs.forEach(ele => {
     ele.addEventListener('copy', event => {
         ele.style.display = 'none';
+    })
+})
+
+let textContent = document.querySelectorAll('.text-content');
+let paragraph = document.querySelectorAll('.text-content p');
+
+paragraph.forEach(ele => {
+    ele.addEventListener('click', event => {
+        ele.style.color = 'orange';
+        event.stopPropagation();
+    })
+})
+
+textContent.forEach(ele => {
+    ele.addEventListener('click', event => {
+        ele.style.background = 'blue';
     })
 })
